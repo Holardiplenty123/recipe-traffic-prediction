@@ -30,7 +30,7 @@ Cleaning it turned up more than expected:
 
 ## 🔍 Exploratory Data Analysis
 
-![Number of recipes by category](images/cell15_out0.png)
+![Number of recipes by category](cell15_out0.png)
 
 Chicken, Breakfast, and Beverages had the most recipes in the dataset, but volume didn't predict performance. Category carried most of the signal well before any model got trained:
 
@@ -38,11 +38,11 @@ Chicken, Breakfast, and Beverages had the most recipes in the dataset, but volum
 - Potato hit 94.3%, Pork hit 91.7%
 - Beverages barely cracked 5.4%, the lowest of any category
 
-![Distribution of calories per recipe](images/cell14_out0.png)
+![Distribution of calories per recipe](cell14_out0.png)
 
 Calories are heavily right skewed, most recipes sit under 500 calories, with a long tail of outliers up to 3,600.
 
-![Sugar content vs traffic outcome](images/cell17_out1.png)
+![Sugar content vs traffic outcome](cell17_out1.png)
 
 The nutrition numbers told a quieter story. High traffic recipes ran slightly higher on average in calories, carbs, and protein, but the gap was modest next to the category split above, and sugar content barely moved between the two groups.
 
@@ -66,17 +66,17 @@ On the holdout test set:
 - Random Forest: 0.740 precision on average (± 0.030)
 - ROC AUC: 0.87 for Logistic Regression, 0.85 for Random Forest
 
-![ROC curve comparing both models](images/cell24_out0.png)
+![ROC curve comparing both models](cell24_out0.png)
 
 Logistic Regression is the recommendation. It's the only one that clears the 0.80 precision bar on a reliable multi-fold estimate, it's far simpler to explain to a non technical product team, and it wins on the metric the business actually asked for. Random Forest catches more of the true high traffic recipes, higher recall, but that comes from making more false positive calls, the expensive mistake given the original ask.
 
 ## 🔑 What Drives the Prediction
 
-![Feature importance](images/cell25_out0.png)
+![Feature importance](cell25_out0.png)
 
 Category is doing most of the work, more than the nutrition numbers. Beverages is the single strongest feature in the entire model, ahead of every nutrition column, and it points toward low traffic. Protein content is the strongest numeric signal on its own.
 
-![Traffic share by category](images/cell16_out0.png)
+![Traffic share by category](cell16_out0.png)
 
 ## 💡 Recommendation
 
