@@ -66,7 +66,7 @@ Logistic Regression is the recommendation. It's the only one that clears the 0.8
 
 Category is doing most of the work, more than the nutrition numbers. Beverages is the single strongest feature in the entire model, ahead of every nutrition column, and it points toward low traffic. Protein content is the strongest numeric signal on its own.
 
-![Traffic share by category](images/cell16_out0.png)
+![Traffic share by category](cell16_out0.png)
 
 ## 💡 Recommendation
 
